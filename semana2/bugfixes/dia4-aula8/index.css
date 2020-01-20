@@ -23,8 +23,12 @@ input {
     border: none;
     border-bottom: 2px solid black;
 }
+input:hover{
+    opacity: 0.3;
+}
 input:focus{
     outline: none;
+    opacity: 1;
 }
 button:focus {
     color: white;
