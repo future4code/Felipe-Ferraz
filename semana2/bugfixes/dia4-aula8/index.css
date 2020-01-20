@@ -23,11 +23,13 @@ input {
     border: none;
     border-bottom: 2px solid black;
 }
-
+input:focus{
+    outline: none;
+}
 button:focus {
     color: white;
+    outline: none;
 }
-
 img {
     width: 50px;
 }
