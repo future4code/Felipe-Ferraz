@@ -31,7 +31,7 @@ img {
 }
 
 div>p:first-child {
-    display: inline;
+    display: inline-block;
 }
 
 div img {
@@ -82,8 +82,13 @@ div img {
 }
 .container-texto-inicio{
     padding-top: 80px;
+    width: 260px;
+    margin:auto;
 }
-
+.container-texto-inicio>ol{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
 #container-para-comprar {
     background-color: #e7eb90;
 }
