@@ -80,6 +80,9 @@ div img {
 #container-de-descricao>ol {
     padding: 15px 0px;
 }
+.container-texto-inicio{
+    padding-top: 80px;
+}
 
 #container-para-comprar {
     background-color: #e7eb90;
