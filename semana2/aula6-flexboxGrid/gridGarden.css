@@ -1,0 +1,85 @@
+Lv1
+grid-column-start: 3 
+
+Lv2
+grid-column-start:5
+
+Lv3
+grid-column-end:4
+
+Lv4
+grid-column-end:2
+
+Lv5
+grid-column-end:5
+
+Lv6
+grid-column-start:-3
+
+Lv7
+grid-column-end: span 2
+
+Lv8
+grid-column-end: span 5
+
+Lv9
+grid-column-start: span 3
+
+Lv10
+grid-column: 4/6
+
+Lv11
+grid-column: 2/span 3
+
+Lv12
+grid-row-start:3
+
+Lv13
+grid-row: 3/ 6
+
+Lv14
+grid-column: 2;
+grid-row: 5
+
+Lv15
+grid-column: 2 / span 4;
+grid-row: 1 / span 5
+
+Lv16
+grid-area: 1/2/4/6
+
+Lv17
+grid-area: 2/3/5/6
+
+Lv18
+order:1
+
+Lv19
+order:-1
+
+Lv20
+grid-template-columns:50%;
+
+Lv21
+grid-template-columns:12.5%
+
+Lv22
+grid-template-columns: 100px 3em 40%;
+
+Lv23
+grid-template-columns: 1fr 5fr
+
+Lv24
+grid-template-columns: 50px 1fr 1fr 1fr 50px
+
+Lv25
+grid-template-columns: 75px 3fr 2f
+
+lv26
+grid-template-rows: 12.5px 12.5px 12.5px 12.5px 
+
+lv27
+grid-template : 60%/ 200px
+
+lv28
+grid-template: 1fr 50px /20% 80%
