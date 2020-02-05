@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-container">
+        <h1>Minha semana</h1>
+        <div>
+            <input type="text" name="Nova Tarefa" id="nome-tarefa">
+            <select name="Dia" id="dia-semana">
+                <option value="segunda">Segunda</option>
+                <option value="terca">Terça</option>
+                <option value="quarta">Quarta</option>
+                <option value="quinta">Quinta</option>
+                <option value="sexta">Sexta</option>
+                <option value="sabado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+            <button onclick="adicionarTarefa()">Inserir atividade</button>
+            <button onclick="limparTarefas()">Limpar tarefas</button>
+            <span>Horas:</span>
+            <select name="Horas" id="hora">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+            </select>
+        </div>
+        <div id="segunda">
+            Segunda
+            <ul></ul>
+        </div>
+        <div id="terca">Terça
+            <ul></ul>
+        </div>
+        <div id="quarta">Quarta
+            <ul></ul>
+        </div>
+        <div id="quinta">Quinta
+            <ul></ul>
+        </div>
+        <div id="sexta">Sexta
+            <ul></ul>
+        </div>
+        <div id="sabado">Sábado
+            <ul></ul>
+        </div>
+        <div id="domingo">Domingo
+            <ul></ul>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

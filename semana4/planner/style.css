@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150vh;
+}
+
+main >div{
+    border: 1px solid black;
+    height: 40vh;
+}
+.riscoCentro{
+    text-decoration: line-through;
+    color: green
+}
+li{
+    font-size: 1.3em;
+}
+li:hover{
+    background-color: burlywood;
+}
