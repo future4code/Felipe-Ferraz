@@ -1,15 +1,24 @@
 'use strict'
+let array = []
 class Post {
-    constructor(titulo, autor, conteudo){
-    this.titulo = titulo
-    this.autor = autor
-    this.conteudo = conteudo
+    constructor(titulo, autor, conteudo) {
+        this.titulo = titulo
+        this.autor = autor
+        this.conteudo = conteudo
     }
 }
 
-function novoPost(titulo, autor, conteudo){
-    titulo = document.getElementById('titulo').value
-    autor = document.getElementById('autor').value
-    conteudo = document.getElementById('conteudo').value
-    let aux = new Post (titulo, autor, conteudo)
+function novoPost(titulo, autor, conteudo) {
+    let inputTitulo = document.getElementById('titulo')
+    let inputAutor = document.getElementById('autor')
+    let inputConteudo = document.getElementById('conteudo')
+    titulo = inputTitulo.value
+    autor = inputAutor.value
+    conteudo = inputConteudo.value
+    let aux = new Post(titulo, autor, conteudo)
+    array.push(aux)
+    inputTitulo.value=""
+    inputAutor.value=""
+    inputConteudo.value=""
+    console.log(array)
 }
