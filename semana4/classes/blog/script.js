@@ -21,4 +21,13 @@ function novoPost(titulo, autor, conteudo) {
     inputAutor.value=""
     inputConteudo.value=""
     console.log(array)
+    inserirPost()
+}
+
+function inserirPost(){
+    for (let itens of array){
+        console.log(itens)
+        document.getElementById("mostrarPost").innerHTML +=itens
+    }
+   
 }
