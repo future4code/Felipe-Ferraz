@@ -246,14 +246,14 @@ let consultaAtiva = []
 let consultaCancelada = []
 let mensagemCanceladaMasculina = []
 let mensagemCanceladafeminina = []
-let mensagemAtivaMasculina=[]
-let mensagemAtivaFeminina=[]
+let mensagemAtivaMasculina = []
+let mensagemAtivaFeminina = []
 function enviarEmail(array) {
     filtrarConsultaAtivo(array)
     filtrarConsultaCancelada(array)
     enviarMensagemCancelada()
     EnviarMensagemAtiva()
-    console.log(consultaAtiva, consultaCancelada, mensagemCanceladafeminina, mensagemCanceladaMasculina, mensagemAtivaMasculina,mensagemAtivaFeminina )
+    console.log(consultaAtiva, consultaCancelada, mensagemCanceladafeminina, mensagemCanceladaMasculina, mensagemAtivaMasculina, mensagemAtivaFeminina)
 }
 function filtrarConsultaAtivo(array) {
     consultaAtiva = array.filter(element => {
@@ -277,7 +277,7 @@ function enviarMensagemCancelada() {
         }
     });
 }
-function EnviarMensagemAtiva(){
+function EnviarMensagemAtiva() {
     consultaAtiva.forEach(el => {
         if (el.genero == "masculino") {
             mensagemAtivaMasculina.push(`Olá, Sr ${el.nome}. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${el.dataDaConsulta} or favor, acuse o recebimento deste e-mail.`)
@@ -290,21 +290,41 @@ function EnviarMensagemAtiva(){
 //------------------------------------------------------------------------
 // 5)
 const contas = [
-	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
-	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
-	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
-	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
-	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
-	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+    { cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+    { cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+    { cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+    { cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+    { cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+    { cliente: "Soter", saldoTotal: 1200, compras: [] }
 ]
-
-function atualizarSaldo(contas){
-    let saldo
-    saldo = contas.map(element =>{
+let aux2 = 0
+let saldo
+//console.log(contas)
+function atualizarSaldo(contas) {
+    pegarArrayCompras(contas)
+    //console.log(saldo[0])
+    somarContas()
+    //console.log(saldo)
+    contas.forEach((element, index)=>{
+        element.saldoTotal -= saldo[index]
+    }) 
+    console.log(contas)
+}
+function pegarArrayCompras(contas) {
+    saldo = contas.map(element => {
         return element.compras
-        
-        
     })
-
-    console.log(saldo)
+}
+function somarContas() {
+    for (let i = 0; i < saldo.length; i++) {
+        let aux = saldo[i]
+        //console.log(saldo[i])
+        for (let elements of aux) {
+            aux2 += elements
+            //console.log(aux2)
+        }
+        saldo[i] = aux2
+        aux2 = 0
+    }
+    //console.log(saldo)
 }
