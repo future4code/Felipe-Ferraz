@@ -1,0 +1,15 @@
+.small-card{
+    border: 1px solid black;
+    margin: 1vw 0;
+    height: 15vh;;
+    display: flex;
+    align-items: center;
+    justify-content: start
+    
+
+}
+
+.small-card>img{
+    height: 40%;
+    margin-right: 2%;
+}

@@ -1,0 +1,17 @@
+.image-button{
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 50%;
+    height: 40px;
+    margin: auto;
+}
+
+.image-button>a>img{
+    width: 20%;
+}
+
+.image-button>a{
+    text-decoration: none;
+    color: black;
+    display: inline;
+}
