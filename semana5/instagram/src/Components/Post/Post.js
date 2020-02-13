@@ -68,7 +68,7 @@ class Post extends React.Component {
     render() {
         return (
             <div className='post ' onDoubleClick={this.CurtirPost}>
-                <p className='titulo-post'> Felipe Ferraz </p>
+                <p className='titulo-post'> {this.props.nome} </p>
                 <img className='img-post' src={this.props.imagem} />
                 <div className='conjuntoBotoes'>
                     <div>
