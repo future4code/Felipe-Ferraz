@@ -1,0 +1,830 @@
+{
+	"info": {
+		"_postman_id": "8d9475ed-b160-458d-ab61-0d5b64980d59",
+		"name": "Felipe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "criarPlayList",
+			"item": [
+				{
+					"name": "createPlaylistReggae",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "auth",
+								"value": "felipe",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"reggae\"\n}"
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/createPlaylist",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"createPlaylist"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createPlaylist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "auth",
+										"value": "authentication-token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"playlist-name\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/createPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"createPlaylist"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "createPlaylistForro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "auth",
+								"value": "felipe",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"forro\"\n}"
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/createPlaylist",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"createPlaylist"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createPlaylist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "auth",
+										"value": "authentication-token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"playlist-name\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/createPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"createPlaylist"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "createPlaylistRock",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "auth",
+								"value": "felipe",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"rock\"\n}"
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/createPlaylist",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"createPlaylist"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createPlaylist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "auth",
+										"value": "authentication-token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"playlist-name\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/createPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"createPlaylist"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "verificarPlaylistCriada",
+			"item": [
+				{
+					"name": "VerificarPlayLists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "felipe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getAllPlaylists",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"getAllPlaylists"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AdicionarMusica",
+			"item": [
+				{
+					"name": "Reggae",
+					"item": [
+						{
+							"name": "adicionar1MusicaReggae",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "felipe"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"e1a1cba1-cf3c-4c54-a635-d5eafd2a2b8e\",\n\t\"music\": {\n\t\t\"name\": \"arvore do reggae\",\n\t\t\"artist\": \"ponto de equilibrio\",\n\t\t\"url\": \"http://spoti4.future4.com.br/1.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "adicionar2MusicaReggae",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "felipe"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"e1a1cba1-cf3c-4c54-a635-d5eafd2a2b8e\",\n\t\"music\": {\n\t\t\"name\": \"redemption song\",\n\t\t\"artist\": \"bob marley\",\n\t\t\"url\": \"http://spoti4.future4.com.br/2.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Forro",
+					"item": [
+						{
+							"name": "adicionar1MusicaForro",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "felipe"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"d962df49-34a5-4267-9a35-8e326368af7b\",\n\t\"music\": {\n\t\t\"name\": \"amigo velho\",\n\t\t\"artist\": \"falamansa\",\n\t\t\"url\": \"http://spoti4.future4.com.br/3.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "adicionar2MusicaForro",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "felipe"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"d962df49-34a5-4267-9a35-8e326368af7b\",\n\t\"music\": {\n\t\t\"name\": \"acalanto\",\n\t\t\"artist\": \"black do acordeon\",\n\t\t\"url\": \"http://spoti4.future4.com.br/5.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Rock",
+					"item": [
+						{
+							"name": "adicionar1MusicaRock",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "felipe"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"48e0de61-0321-4ab5-a45b-57fc3c84774e\",\n\t\"music\": {\n\t\t\"name\": \"yesterday\",\n\t\t\"artist\": \"the beatles\",\n\t\t\"url\": \"http://spoti4.future4.com.br/6.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "adicionar2MusicaRock",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "felipe"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"48e0de61-0321-4ab5-a45b-57fc3c84774e\",\n\t\"music\": {\n\t\t\"name\": \"let it be\",\n\t\t\"artist\": \"the beatles\",\n\t\t\"url\": \"http://spoti4.future4.com.br/7.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "VerificarPlaylistComMusicas",
+			"item": [
+				{
+					"name": "reggae",
+					"item": [
+						{
+							"name": "getPlaylistMusics/:playlistId",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"value": "felipe",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getPlaylistMusics/e1a1cba1-cf3c-4c54-a635-d5eafd2a2b8e/",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"getPlaylistMusics",
+										"e1a1cba1-cf3c-4c54-a635-d5eafd2a2b8e",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "rock",
+					"item": [
+						{
+							"name": "PlaylistComMusicaRock",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"value": "felipe",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getPlaylistMusics/48e0de61-0321-4ab5-a45b-57fc3c84774e/",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"getPlaylistMusics",
+										"48e0de61-0321-4ab5-a45b-57fc3c84774e",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "forro",
+					"item": [
+						{
+							"name": "PlaylistComMusicaForro",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"value": "felipe",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getPlaylistMusics/d962df49-34a5-4267-9a35-8e326368af7b/",
+									"protocol": "https",
+									"host": [
+										"us-central1-spotif4",
+										"cloudfunctions",
+										"net"
+									],
+									"path": [
+										"api",
+										"playlists",
+										"getPlaylistMusics",
+										"d962df49-34a5-4267-9a35-8e326368af7b",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AdicionarMaisMusicaRock",
+			"item": [
+				{
+					"name": "ProcurarPlaylist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "felipe"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/searchPlaylist?playlistName=rock",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"searchPlaylist"
+							],
+							"query": [
+								{
+									"key": "playlistName",
+									"value": "rock"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add3MusicaRock",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "felipe"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"playlistId\": \"48e0de61-0321-4ab5-a45b-57fc3c84774e\",\n\t\"music\": {\n\t\t\"name\": \"Bee Gess\",\n\t\t\"artist\": \"howw depp is yout love\",\n\t\t\"url\": \"http://spoti4.future4.com.br/10.mp3\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"addMusicToPlaylist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add4MusicaRock",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "felipe"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"playlistId\": \"48e0de61-0321-4ab5-a45b-57fc3c84774e\",\n\t\"music\": {\n\t\t\"name\": \"is my life\",\n\t\t\"artist\": \"bom jovi\",\n\t\t\"url\": \"http://spoti4.future4.com.br/11.mp3\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"addMusicToPlaylist"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "VerificarNovasMusicasRock",
+			"item": [
+				{
+					"name": "PlaylistComMusicaRock",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "felipe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getPlaylistMusics/48e0de61-0321-4ab5-a45b-57fc3c84774e/",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"getPlaylistMusics",
+								"48e0de61-0321-4ab5-a45b-57fc3c84774e",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
