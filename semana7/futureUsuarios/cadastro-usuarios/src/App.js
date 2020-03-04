@@ -1,39 +1,62 @@
 import React from 'react';
 import CadastroUsuario from './components/CadastroUsuario'
 import ListaUsuarios from './components/ListaUsuarios'
+import DetalhesUsuarios from './components/DetalhesUsuario'
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state={
-      paginaASerExibida: true
+    this.state = {
+      paginaASerExibida: '1',
+      idDetalhe :''
     }
   }
 
-  mudarPagina = () =>{
-    console.log(this.state.paginaASerExibida)
-    let novaPagina = this.state.paginaASerExibida
-    if(novaPagina){
-      novaPagina = false
+  mudarPagina = (numeroPagina, id) => {
+    let idUsuario = id
+    let paginaAtual = this.state.paginaASerExibida
+    let novaPagina = numeroPagina
+    if (novaPagina !== paginaAtual) {
+      this.setState({
+        paginaASerExibida: novaPagina,
+        idDetalhe: idUsuario
+      })
     }
-    else{
-      novaPagina = true
-    }
-    this.setState({
-      paginaASerExibida : novaPagina
-    })
   }
 
+teste = (id) =>{
+  console.log(id)
+}
+  
   ExibirPagina = () => {
     const alterarPagina = this.state.paginaASerExibida
-    return (
-      alterarPagina ? <CadastroUsuario
-      mudarPagina={this.mudarPagina}
-       /> : <ListaUsuarios
-       mudarPagina={this.mudarPagina}
-       />
+    switch (alterarPagina) {
+      default: return (
+        <CadastroUsuario
+          mudarPagina={this.mudarPagina}
+        />
+      )
+      case '1': return (
+        <CadastroUsuario
+          mudarPagina={this.mudarPagina}
+        />
+      )
+      case '2': return (
+        <ListaUsuarios
+          mudarPagina={this.mudarPagina}
+        />
+      )
+      case '3': return (
+        <DetalhesUsuarios
+          mudarPagina={this.mudarPagina}
+          idBusca = {this.state.idDetalhe}
+          a ={this.teste}
+          
 
-    )
+        />
+      )
+
+    }
 
   }
 

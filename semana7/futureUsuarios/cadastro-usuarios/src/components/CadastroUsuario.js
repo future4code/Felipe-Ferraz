@@ -47,7 +47,6 @@ class CadstroUsuario extends React.Component {
             name: this.state.name,
             email: this.state.email
         }
-        console.log('fui chamado')
         const promessaNovoUsuario = axios.post(
             `${baseUrl}/users/createUser`, novoUsuario,
             {
@@ -89,10 +88,11 @@ render() {
                 </ButtonSalvar>
 
             <button
-                onClick={this.props.mudarPagina}
+                onClick={() => this.props.mudarPagina('2')}
             >Lista de usuários
     
         </button>
+        
         </ContainerCadastro>
     )
 }
