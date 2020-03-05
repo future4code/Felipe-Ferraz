@@ -1,7 +1,27 @@
 import React from 'react'
 import axios from 'axios'
+import styled from 'styled-components';
 
 const baseURL = "https://pokeapi.co/api/v2"
+
+const Wrapper = styled.div`
+align-self: center;
+display: flex;
+flex-direction:column;
+align-items: center;
+
+`
+const SelectPokemon = styled.select`
+height: 8vh;
+width: 50%;
+text-align: center;
+`
+const OptionSelect = styled.option`
+font-family: sans-serif;
+font-size: 1.5em;
+padding: 5px;
+
+`
 
 class PokemonList extends React.Component {
     constructor(props) {
@@ -11,29 +31,32 @@ class PokemonList extends React.Component {
         }
     }
     componentDidMount() {
-        this.ListaPokemons()
+        this.PokemonsList()
     }
 
-    ListaPokemons = async () => {
+    PokemonsList = async () => {
         const response = await axios.get(`${baseURL}/pokemon?limit=151`)
         this.setState({ pokemonList: response.data.results })
     }
 
-    lidarComNomePokemon = (e) =>{
+    hendleNamePokemon = (e) => {
         const namePokemon = e.target.value
-        this.props.transferirNomePokemon (namePokemon)
+        this.props.transferNamePokemon(namePokemon)
     }
 
     render() {
         return (
-            <div>
-                <select onChange={this.lidarComNomePokemon}>
-                    <option>Selecione um pokemon raiz da lista</option>
+            <Wrapper>
+                <h1>
+                    Selecione o pokemon da lista para ter acesso a seus atributos
+                </h1>
+                <SelectPokemon onChange={this.hendleNamePokemon}>
+                    <OptionSelect>Selecione um pokemon raiz da lista</OptionSelect>
                     {this.state.pokemonList.map((pokemon) => {
-                        return (<option value={pokemon.name}>{pokemon.name}</option>)
+                        return (<OptionSelect value={pokemon.name}>{pokemon.name}</OptionSelect>)
                     })}
-                </select>
-            </div>
+                </SelectPokemon>
+            </Wrapper>
         )
     }
 }
