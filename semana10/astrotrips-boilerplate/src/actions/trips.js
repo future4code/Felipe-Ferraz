@@ -9,6 +9,6 @@ const setTrips = (data) => ({
 
 export const getTrips = () => async(dispatch) =>{
     const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/felipe/trips')
-
-    dispatch(setTrips(response.data))
+    console.log(response.data.trips)
+    dispatch(setTrips(response.data.trips))
 }

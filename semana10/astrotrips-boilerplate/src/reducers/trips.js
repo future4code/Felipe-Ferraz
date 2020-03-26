@@ -1,11 +1,11 @@
 const initialState = {
-    data: null
+    trips: []
 }
 
 const tripsList = (state = initialState, action) =>{
     switch (action.type){
         case  'SET_TRIPS':
-            return {...state, data:action.payload}
+            return {...state, trips:action.payload.data}
         default:{
             return state
         }

@@ -30,11 +30,8 @@ justify-content:space-between;
 margin: 5vh;
 
 `
-
-
 const HomePage = props => {
-    const { goToLoginScreen, goToUserTripsScreen, tripes } = props
-    console.log(tripes)
+    const { goToLoginScreen, goToUserTripsScreen } = props
     return (
         <div>
             <Menu />
@@ -58,11 +55,6 @@ const HomePage = props => {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    tripes: state.data
-})
-
 const mapDispatchToProps = dispatch => {
     return {
         goToLoginScreen: () => dispatch(push(routes.root)),
@@ -70,4 +62,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(null, mapDispatchToProps)(HomePage);

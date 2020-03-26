@@ -9,6 +9,7 @@ import AproveTripsPage from '../AproveTripsPage'
 import listTripsAdmPage from '../ListTripsAdmPage'
 import listUserTripsPage from '../ListTripsUserPage'
 
+
 export const routes = {
   homeScreen: "/",
   root: "/login",
@@ -16,7 +17,8 @@ export const routes = {
   createTrips: "/create ",
   listAdmTrips: "/list ",
   aproveTrips: "/aprove ",
-  listUserTrips: "/listUserTrips"
+  listUserTrips: "/listUserTrips",
+ 
 
 };
 
