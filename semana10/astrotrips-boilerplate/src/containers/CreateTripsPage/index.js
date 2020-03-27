@@ -56,11 +56,7 @@ class CreateTripsPage extends React.Component {
     }
 
     handleFieldChange = e => {
-        let { name, value } = e.target;
-        if (name === '') {
-            name = 'planet'
-        }
-        console.log(name, value)
+        const { name, value } = e.target;
         this.setState({
             form: {
                 ...this.state.form,
@@ -97,7 +93,9 @@ class CreateTripsPage extends React.Component {
                         />)
                     })}
 
-                    <select onChange={this.handleFieldChange} >
+                    <select onChange={this.handleFieldChange}
+                    name= 'planet'
+                     >
                         {planets.map(planet => {
                             return (
                                 <option

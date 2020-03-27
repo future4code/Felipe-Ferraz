@@ -8,18 +8,18 @@ import CreateTripsPage from '../CreateTripsPage'
 import AproveTripsPage from '../AproveTripsPage'
 import listTripsAdmPage from '../ListTripsAdmPage'
 import listUserTripsPage from '../ListTripsUserPage'
+import RegisterUserPage from '../RegisterUserPage'
 
 
 export const routes = {
   homeScreen: "/",
   root: "/login",
   admPage: "/adm",
-  createTrips: "/create ",
-  listAdmTrips: "/list ",
-  aproveTrips: "/aprove ",
+  createTrips: "/adm/create ",
+  listAdmTrips: "/adm/list ",
+  aproveTrips: "/adm/aprove ",
   listUserTrips: "/listUserTrips",
- 
-
+  registerUser: "/RegisterUser"
 };
 
 function Router(props) {
@@ -33,6 +33,7 @@ function Router(props) {
         <Route exact path={routes.aproveTrips} component={AproveTripsPage} />
         <Route exact path={routes.listAdmTrips} component={listTripsAdmPage} />
         <Route exact path={routes.listUserTrips} component={listUserTripsPage} />
+        <Route exact path={routes.registerUser} component ={RegisterUserPage}/>
       </Switch>
     </ConnectedRouter>
   );

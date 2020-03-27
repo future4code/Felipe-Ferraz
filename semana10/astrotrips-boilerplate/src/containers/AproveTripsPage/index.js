@@ -3,19 +3,29 @@ import { connect } from 'react-redux'
 import { routes } from '../Router'
 import { push } from 'connected-react-router'
 
-const AproveTripsPage = props => {
-    return (
-        <div>
-            <button
-                onClick={props.goToAdmScreen}
-            >Voltar</button>
-        </div>
-    )
+class AproveTripsPage extends React.Component {
+
+    componentDidMount(){
+        const token = localStorage.getItem('token')
+        if(token === null){
+            this.props.goToLoginScreen()
+        }
+    }
+    render() {
+        return (
+            <div>
+                <button
+                    onClick={this.props.goToAdmScreen}
+                >Voltar</button>
+            </div>
+        )
+    }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        goToAdmScreen: () => dispatch(push(routes.admPage))
+        goToAdmScreen: () => dispatch(push(routes.admPage)),
+        goToLoginScreen: () => dispatch(push(routes.root))
     }
 }
 

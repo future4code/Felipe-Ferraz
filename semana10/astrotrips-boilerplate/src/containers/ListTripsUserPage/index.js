@@ -16,7 +16,6 @@ class ListTripsUserPage extends React.Component {
         this.props.getTrips()
     }
     render() {
-            console.log(this.props.allTrips)
             return (
                 <div>
                     <div>
@@ -40,7 +39,7 @@ class ListTripsUserPage extends React.Component {
                                     </CardContent>
                                     <CardActions>
                                         <Button size="small"
-                                         onClick = {this.props.goToDetailScreen}
+                                         onClick = {this.props.goToRegisterUserScreen}
                                         id = {el.id}
                                         >Faça cadastro
                                        
@@ -62,7 +61,7 @@ class ListTripsUserPage extends React.Component {
     const mapDispatchToProps = dispatch => {
         return {
             goToHomeScreen: () => dispatch(push(routes.homeScreen)),
-            goToDetailScreen: () => dispatch(push(routes.TripsDetails)),
+            goToRegisterUserScreen: () => dispatch(push(routes.registerUser)),
             getTrips: () => dispatch(getTrips())
         }
     }

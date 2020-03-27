@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useImperativeHandle } from 'react'
 import { connect } from 'react-redux'
 import { routes } from "../Router"
 import { push } from 'connected-react-router'
@@ -16,40 +16,55 @@ justify-content: space-around;
 `
 
 
-const AdmPage = props => {
-    const { goToCreateTripsScreen, goToListTripsScreen,
-        goToAproveTripsScreen, goToHomeScreen } = props
 
-    return (
-        <div>
-            <Menu />
-            <Wrapper>
-                <h1>Bem vindo Adm</h1>
-                <Button
-                    color='inherit'
-                    variant="outlined"
-                    onClick={goToCreateTripsScreen}
-                >Criar viagem</Button>
-                <Button
-                    color='inherit'
-                    variant="outlined"
-                    onClick={goToListTripsScreen}
-                >Lista viagens</Button>
-                <Button
-                    color='inherit'
-                    variant="outlined"
-                    onClick={goToAproveTripsScreen}
-                >Aprovar viagens</Button>
-                <Button
-                    color='inherit'
-                    variant="outlined"
-                    onClick={goToHomeScreen}
-                >Deslogar</Button>
-            </Wrapper>
-            <Footer />
+class AdmPage extends React.Component {
+    componentDidMount() {
+        const token = localStorage.getItem('token')
+        if (token === null) {
+            this.props.goToHomeScreen() //Como usar desestruturação para ter acesse aqui?
+        }
+    }
 
-        </div>
-    )
+    handleLogout = () => {
+        localStorage.removeItem('token')
+        this.props.goToHomeScreen()
+    }
+
+    render() {
+        const { goToCreateTripsScreen, goToListTripsScreen,
+            goToAproveTripsScreen} = this.props
+        return (
+            <div>
+                <Menu />
+                <Wrapper>
+                    <h1>Bem vindo Adm</h1>
+                    <Button
+                        color='inherit'
+                        variant="outlined"
+                        onClick={goToCreateTripsScreen}
+                    >Criar viagem</Button>
+                    <Button
+                        color='inherit'
+                        variant="outlined"
+                        onClick={goToListTripsScreen}
+                    >Lista viagens</Button>
+                    <Button
+                        color='inherit'
+                        variant="outlined"
+                        onClick={goToAproveTripsScreen}
+                    >Aprovar viagens</Button>
+                    <Button
+                        color='inherit'
+                        variant="outlined"
+                        onClick={this.handleLogout}
+                    >Deslogar</Button>
+                </Wrapper>
+                <Footer />
+
+            </div>
+        )
+
+    }
 }
 
 const mapDispatchToProps = dispatch => {
