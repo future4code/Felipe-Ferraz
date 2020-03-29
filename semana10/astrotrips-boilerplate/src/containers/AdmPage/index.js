@@ -15,8 +15,6 @@ flex-direction:column;
 justify-content: space-around;
 `
 
-
-
 class AdmPage extends React.Component {
     componentDidMount() {
         const token = localStorage.getItem('token')
@@ -54,7 +52,7 @@ class AdmPage extends React.Component {
                         onClick={goToAproveTripsScreen}
                     >Aprovar viagens</Button>
                     <Button
-                        color='inherit'
+                        color='secondary'
                         variant="outlined"
                         onClick={this.handleLogout}
                     >Deslogar</Button>

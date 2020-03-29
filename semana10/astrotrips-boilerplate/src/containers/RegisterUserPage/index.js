@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
 import { routes } from '../Router'
-import { getTrips } from '../../actions/trips'
+import { getTrips, registerNewUser } from '../../actions/trips'
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,6 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
 import styled from 'styled-components'
+
 
 const dataForm = [
     {
@@ -28,7 +29,12 @@ const dataForm = [
     {
         name: 'applicationText', label: 'Porque sou um bom candidato(a)?',
         type: 'text', required: true,
-        pattern: '[A-z]{30,}', title: 'Tenha pelo menos 30'
+        min: 30, title: 'Tenha pelo menos 30'
+    },
+    {
+        name: "profession", label: 'Profissão:',
+        type: 'text,', required: true,
+
     }
 ]
 
@@ -282,6 +288,8 @@ const country = [
 const Wrapper = styled.form`
 display:flex;
 flex-direction:column;
+width: 70vw;
+margin: 25px auto;
 `
 
 class RegisterUser extends React.Component {
@@ -307,20 +315,35 @@ class RegisterUser extends React.Component {
         })
     }
 
-    test = e => {
+    handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state.candidate)
+        const candidateData = this.state.candidate
+        const id = candidateData.trip
+
+        const data = {
+            name: candidateData.name,
+            age: candidateData.age,
+            applicationText: candidateData.applicationText,
+            profession: candidateData.profession,
+            country: candidateData.country
+        }
+        console.log(id,data)
+        this.props.registerNewUser(id,data)
     }
     render() {
         return (
 
-            <Wrapper onSubmit={this.test}>
+            <Wrapper onSubmit={this.handleSubmit}>
+                <h2>Faça seu cadastro abaixo:</h2>
                 <FormControl>
                     <InputLabel htmlFor="Nome-da-viagem"> Viagem</InputLabel>
                     <Select
                         value={this.state.candidate.trip}
                         onChange={this.handleChange}
                         name="trip"
+                        inputProps={{
+                            required: true
+                        }}
                     >
                         {this.props.allTrips.map(el => {
                             return (
@@ -358,20 +381,28 @@ class RegisterUser extends React.Component {
                         onChange={this.handleChange}
                         name="country"
                     >
-                    {country.map(el => {
-                        return (
-                            <MenuItem
-                                key={el.name}
-                                value={el.name}
-                            > {el.name}
-                            </MenuItem>
-                                )
-                            })}
-                            </Select>
-                    </FormControl>
-                            <Button type="submit"
-                            >Enviar</Button>
-                </Wrapper>
+                        {country.map(el => {
+                            return (
+                                <MenuItem
+                                    key={el.name}
+                                    value={el.name}
+                                >
+                                    {el.name}
+                                </MenuItem>
+                            )
+                        })}
+                    </Select>
+                </FormControl>
+                <Button type="submit" color='primary'size= 'large'
+                >Enviar</Button>
+                <Button 
+                color = 'secondary' size= 'large'
+                onClick = {this.props.goToListTripsScreen}
+                 >
+                        Voltar
+                </Button>
+
+            </Wrapper>
 
         )
     }
@@ -379,16 +410,18 @@ class RegisterUser extends React.Component {
 
 const mapStateToProps = state => {
     return (
-                {
-                    allTrips: state.trips.trips
+        {
+            allTrips: state.trips.trips
         }
     )
 }
 
 const mapDispatchToProps = dispatch => {
     return (
-                {
-                    getTrips: () => dispatch(getTrips())
+        {
+            getTrips: () => dispatch(getTrips()),
+            registerNewUser:(id,data) => dispatch(registerNewUser(id,data)),
+            goToListTripsScreen: () => dispatch(push(routes.listUserTrips))
         }
     )
 }

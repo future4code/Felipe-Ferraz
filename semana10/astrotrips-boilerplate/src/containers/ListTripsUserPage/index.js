@@ -8,6 +8,16 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+display:flex;
+flex-direction:column;
+width: 70vw;
+margin: auto;
+
+`
+
 
 
 class ListTripsUserPage extends React.Component {
@@ -18,29 +28,30 @@ class ListTripsUserPage extends React.Component {
     render() {
             return (
                 <div>
-                    <div>
+                    <Wrapper>
 
                         {this.props.allTrips.map(el => {
                             return (
                                 <Card key= {el.id}>
                                     <CardContent>
-                                        <Typography color="textSecondary">
+                                        <Typography color="textSecondary" variant = 'h4'>
                                             {el.planet}
                                         </Typography>
-                                        <Typography>
+                                        <Typography component = "h1" variant = 'h5'>
                                             {el.name}
                                         </Typography>
-                                        <Typography>
+                                        <Typography variant = "h6" >
                                             {el.date}
                                         </Typography>
-                                        <Typography>
+                                        <Typography  Typography variant = "headline" component="p" >
                                             {el.description}
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <Button size="small"
+                                        <Button size="large"
                                          onClick = {this.props.goToRegisterUserScreen}
                                         id = {el.id}
+                                        color = 'primary'
                                         >Faça cadastro
                                        
                                         </Button>
@@ -49,10 +60,12 @@ class ListTripsUserPage extends React.Component {
                             )
                         })}
 
-                    </div>
-                    <button
+                    </Wrapper>
+                    <Button 
+                        color = 'secondary' size="large"
                         onClick={this.props.goToHomeScreen}
-                    >Voltar</button>
+                    >Voltar
+                    </Button>
                 </div>
             )
 

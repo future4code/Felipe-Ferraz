@@ -59,11 +59,9 @@ class LoginPage extends Component {
           required
           value={password}
         />
-        <Button type={'submit'}
+        <Button type={'submit'} color= 'primary'
         >Login</Button>
-        <Button
-          onClick={goToHomeScreen}
-        >Voltar</Button>
+        <Button onClick={goToHomeScreen} color= 'secondary' >Voltar</Button>
       </LoginWrapper>
     );
   }

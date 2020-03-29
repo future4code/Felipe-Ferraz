@@ -13,13 +13,13 @@ height: 80vh;
 display: flex;
 flex-direction:column;
 align-items: center;
-background-color: #DEDEDE;
+background-color: #FEFEFE;
 
 `
 const Logo = styled.img`
 margin-top: 5vh;
 height: 50vh;
-width: 60vw;
+width: 50vw;
 border-radius: 15px;
 box-shadow: 2px 2px 3px;
 `
