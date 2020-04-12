@@ -9,9 +9,7 @@ const Tasks = (props) => {
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {props.taskDay}
-        </Typography>
-        <Typography variant="h5" component="h2">
-          {props.taskText}
+          teste
         </Typography>
       </CardContent>
     </Card>

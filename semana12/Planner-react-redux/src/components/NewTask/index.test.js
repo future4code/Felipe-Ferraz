@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
-import renderer from "react-test-renderer";
 import NewTasks from "./index";
 import Button from "@material-ui/core/Button";
+import Select from "@material-ui/core/Select";
 
 const mockTask = {
   text: "Lavar o carro",
@@ -21,7 +21,24 @@ describe("Create Task Component", () => {
     component.instance().saveNewTask(mockEvent);
     const createButtonTask = component.find(Button);
     expect(createButtonTask).toHaveLength(1);
-    createButtonTask.simulate("click");
+    createButtonTask.simulate("Onclick");
     expect(mockCreateTask).toHaveBeenCalledWith(mockTask.day, mockTask.text);
+  });
+
+  test("Open menu", () => {
+    const mockData = {
+      target: {
+        name: "nome",
+        value: "valor",
+      },
+    };
+    const test = { target: jest.fn() };
+    const component = shallow(<NewTasks />);
+    component.setState(jest.fn());
+    component.instance().handleChange(test);
+    const mockSelect = component.find(Select);
+    expect(mockSelect).toHaveLength(1);
+    mockSelect.simulate("change");
+    expect(test).toHaveBeenCalled();
   });
 });

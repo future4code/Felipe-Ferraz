@@ -34,11 +34,33 @@ class Planner extends React.Component {
   render() {
     const { allTasks } = this.props;
     console.log(allTasks);
+    const weekDays = [
+      "Segunda",
+      "Terça",
+      "Quarta",
+      "Quinta",
+      "Sexta",
+      "Sábado",
+      "Domingo",
+    ];
     return (
       <div>
         <h1>Lista de tarefas</h1>
         <NewTasks createTask={this.createTask} />
-        {this.separeDaysSeman()}
+        {weekDays.map((day) => {
+          return (
+            <Tasks taskDay={day} key={day}>
+              {allTasks
+                .filter((task) => task.day === day)
+                .map((tasks) => {
+                  console.log(tasks.text); // Commo passar ele valor via props?
+                  return tasks.text;
+                })}
+              )}
+            </Tasks>
+          );
+        })}
+
         <button onClick={this.separeDaysSeman}>Executar</button>
       </div>
     );
