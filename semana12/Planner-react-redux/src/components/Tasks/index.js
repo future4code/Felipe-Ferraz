@@ -9,7 +9,6 @@ const Tasks = (props) => {
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {props.taskDay}
-          teste
         </Typography>
       </CardContent>
     </Card>
