@@ -1,0 +1,21 @@
+{
+  "name": "oop",
+  "version": "1.0.0",
+  "module": "system",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc ./exercise1/index.ts && node ./exercise1/index.js",
+    "serachPostId": "tsc ./exercise2/index.ts && node ./exercise2/index.js",
+    "postManager": "tsc ./exercise2.1/index.ts && node ./exercise2.1/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.37"
+  }
+}
