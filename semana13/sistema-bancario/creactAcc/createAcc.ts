@@ -1,12 +1,6 @@
 import { account } from "../types/accUser";
 import { appendFileSync } from "fs";
 
-let accounts = [];
-
-// const name = process.argv[2];
-// const dateOfBirth: string = process.argv[3];
-// const cpf = Number(process.argv[4]);
-
 const createAcc: account = {
   name: "Felipe",
   dateOfBirth: "07/10/1991",
@@ -14,4 +8,4 @@ const createAcc: account = {
   id: new Date().getTime(),
 };
 
-appendFileSync("createAcc.json", createAcc, "utf8");
+appendFileSync("createAcc.json", JSON.stringify(createAcc), "utf8");

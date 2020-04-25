@@ -11,4 +11,4 @@ var createAcc = {
     cpf: 1594530549,
     id: new Date().getTime()
 };
-fs_1.appendFileSync("createAcc.json", createAcc, "utf8");
+fs_1.appendFileSync("createAcc.json", JSON.stringify(createAcc), "utf8");
