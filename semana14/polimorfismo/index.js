@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var Residence_1 = require("./Class/Residence/Residence");
+var Commerce_1 = require("./Class/Commerce/Commerce");
+var Industry_1 = require("./Class/Industry/Industry");
+var myResidence = new Residence_1.Residence(5, "12312346543");
+console.log("CEP da minha resid\u00EAncia : " + myResidence.getCep());
+var myCommerce = new Commerce_1.Commerce(5, "45984261841");
+console.log("CEP do meu com\u00E9rcio : " + myCommerce.getCep());
+var myIndustry = new Industry_1.Industry(5, "1529871642");
+console.log("CEP da minha industria : " + myIndustry.getCep());
