@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import { AddressInfo } from "net";
 import dotenv from "dotenv";
 import knex from "knex";
+import { create } from "domain";
 
 dotenv.config();
 
@@ -19,6 +20,81 @@ const connection = knex({
   },
 });
 
+const createUserQuerieConstructor = async (
+  userName: string,
+  nickName: string,
+  email: String
+): Promise<void> => {
+  await connection
+    .insert({ id: null, userName, nickName, email })
+    .into("TodoListUser");
+
+  console.log("produto inserido com sucesso");
+};
+
+const createUser = async (
+  userName: string,
+  nickName: string,
+  email: String
+): Promise<void> => {
+  await connection.raw(`
+  INSERT INTO TodoListUser()
+  VALUES(
+  null,
+  '${userName}',
+  '${nickName}',
+  '${email}'
+  )
+  `);
+  console.log("criado noo usuario");
+};
+
+const getUserById = async (id: number): Promise<void> => {
+  const response = await connection.raw(`
+  SELECT * FROM TodoListUser WHERE id = ${id}
+  `);
+  console.log(response[0][0]);
+};
+
+const getUserByIdQuerieConstrutor = async (id: number): Promise<void> => {
+  const response = await connection
+    .select("*")
+    .from("TodoListUser")
+    .where({ id });
+  console.log(response);
+};
+
+const updateUserById = async (id: number, nickName: string): Promise<void> => {
+  try {
+    const response = await connection.raw(`
+    UPDATE TodoListUser
+    SET nickName = '${nickName}'
+    WHERE id = ${id}
+    `);
+    console.log("nickName atualizado");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const updateUserByIdQuerieConstructor = async (
+  id: number,
+  nickName: string
+) => {
+  try {
+    await connection("TodoListUser").update({ nickName }).where({ id });
+    console.log("nickName atualizado");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const main = async () => {
+  await updateUserByIdQuerieConstructor(1, "felipe007");
+};
+
+main();
+
 // function getActorById(id: string) {}
 
 // app.get("/actor/:id", async (req: Request, res: Response) => {
@@ -34,14 +110,14 @@ const connection = knex({
 //   }
 // });
 
-const server = app.listen(process.env.PORT || 3003, () => {
-  if (server) {
-    const address = server.address() as AddressInfo;
-    console.log(`Server is running in http://localhost:${address.port}`);
-  } else {
-    console.error(`Failure upon starting server.`);
-  }
-});
+// const server = app.listen(process.env.PORT || 3003, () => {
+//   if (server) {
+//     const address = server.address() as AddressInfo;
+//     console.log(`Server is running in http://localhost:${address.port}`);
+//   } else {
+//     console.error(`Failure upon starting server.`);
+//   }
+// });
 
 /**
  *
