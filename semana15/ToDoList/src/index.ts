@@ -1,9 +1,9 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, response } from "express";
 import { AddressInfo } from "net";
 import dotenv from "dotenv";
 import knex from "knex";
-import { create } from "domain";
 
+// configuração extensões
 dotenv.config();
 
 const app = express();
@@ -19,8 +19,18 @@ const connection = knex({
     database: process.env.DB_DATABASE_NAME,
   },
 });
+const server = app.listen(process.env.PORT || 3000, () => {
+  if (server) {
+    const address = server.address() as AddressInfo;
+    console.log(`Server is running in http://localhost:${address.port}`);
+  } else {
+    console.error(`Failure upon starting server.`);
+  }
+});
 
-const createUserQuerieConstructor = async (
+// Método criar usuário
+
+const createUserQueriebuild = async (
   userName: string,
   nickName: string,
   email: String
@@ -28,8 +38,6 @@ const createUserQuerieConstructor = async (
   await connection
     .insert({ id: null, userName, nickName, email })
     .into("TodoListUser");
-
-  console.log("produto inserido com sucesso");
 };
 
 const createUser = async (
@@ -46,14 +54,28 @@ const createUser = async (
   '${email}'
   )
   `);
-  console.log("criado noo usuario");
 };
+
+app.put("/create-user", async (req: Request, res: Response) => {
+  try {
+    const userName = req.body.userName;
+    const nickName = req.body.nickName;
+    const email = req.body.email;
+    await createUser(userName, nickName, email);
+    res.status(200).send({ message: "usuario criado" });
+    console.log(userName, nickName, email);
+  } catch (error) {
+    res.status(400).send({ "Ocorreu o erro": error.message });
+  }
+});
+
+// buscar usuario pelo ID
 
 const getUserById = async (id: number): Promise<void> => {
   const response = await connection.raw(`
   SELECT * FROM TodoListUser WHERE id = ${id}
   `);
-  console.log(response[0][0]);
+  //console.log(response[0][0]);
 };
 
 const getUserByIdQuerieConstrutor = async (id: number): Promise<void> => {
@@ -61,8 +83,16 @@ const getUserByIdQuerieConstrutor = async (id: number): Promise<void> => {
     .select("*")
     .from("TodoListUser")
     .where({ id });
-  console.log(response);
+  //console.log(response);
 };
+
+app.get("/user/:id", async (req: Request, res: Response) => {
+  try {
+    await getUserByIdQuerieConstrutor(id);
+  } catch (error) {
+    res.status(400).send({ "Ocorreu o erro": error.message });
+  }
+});
 
 const updateUserById = async (id: number, nickName: string): Promise<void> => {
   try {
@@ -89,46 +119,7 @@ const updateUserByIdQuerieConstructor = async (
   }
 };
 
-const main = async () => {
-  await updateUserByIdQuerieConstructor(1, "felipe007");
-};
-
-main();
-
-// function getActorById(id: string) {}
-
-// app.get("/actor/:id", async (req: Request, res: Response) => {
-//   try {
-//     const id = req.params.id;
-//     const actor = await getActorById(id);
-
-//     res.status(200).send(actor);
-//   } catch (err) {
-//     res.status(400).send({
-//       message: err.message,
-//     });
-//   }
-// });
-
-// const server = app.listen(process.env.PORT || 3003, () => {
-//   if (server) {
-//     const address = server.address() as AddressInfo;
-//     console.log(`Server is running in http://localhost:${address.port}`);
-//   } else {
-//     console.error(`Failure upon starting server.`);
-//   }
-// });
-
-/**
- *
- * KNEX
- */
-
-// const getActorById = async (id: string): Promise<any> => {
-//   await connection.raw(`
-//     SELECT * FROM Actor WHERE id = '${id}'
-//   `);
-// };
+const main = async () => {};
 
 const createActor = async (
   id: string,
@@ -147,86 +138,3 @@ const createActor = async (
     })
     .into("Actor");
 };
-
-// createActor("002", "Tony Ramos", 4000000, new Date("2020-10-05"), "male");
-
-// const searchActor = async (name: string): Promise<any> => {
-//   const result = await connection.raw(`
-//     SELECT * FROM Actor WHERE name = "${name}"
-//   `);
-//   return result;
-// };
-
-// const countActors = async (gender: string): Promise<any> => {
-//   const result = await connection.raw(`
-//     SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
-//   `);
-
-//   const count = result[0][0].count;
-//   return count;
-// };
-
-// const updateSalary = async (id: string, salary: number): Promise<any> => {
-//   await connection("Actor")
-//     .update({
-//       salary: salary,
-//     })
-//     .where("id", id);
-// };
-
-// const deleteActor = async (id: string): Promise<any> => {
-//   await connection("Actor").delete().where("id", id);
-// };
-
-// const avgSalary = async (gender: string): Promise<any> => {
-//   const result = await connection("Actor")
-//     .avg("salary as average")
-//     .where({ gender });
-
-//   return result[0].average;
-// };
-// (async () => {
-//   console.log(await avgSalary("female"));
-// })();
-
-// const createMovie = async (
-//   id: string,
-//   title: string,
-//   synopsis: string,
-//   releaseDate: Date,
-//   playingLimitDate: Date
-// ) => {
-//   await connection
-//     .insert({
-//       id: id,
-//       title: title,
-//       synopsis: synopsis,
-//       releas_date: releaseDate,
-//       playing_limit_date: playingLimitDate,
-//     })
-//     .into("Movie");
-// };
-
-// const searchMovie = async (term: string): Promise<any> => {
-//   const result = await connection.raw(`
-//     SELECT * FROM Movie
-//     WHERE title LIKE '%${term}%' OR synposis LIKE '%${term}%'
-//     ORDER BY release_date
-//   `);
-
-//   return result[0];
-// };
-
-// app.get("/movie/search", async (req: Request, res: Response) => {
-//   try {
-//     const movies = await searchMovie(req.query.query as string);
-
-//     res.status(200).send({
-//       movies: movies,
-//     });
-//   } catch (err) {
-//     res.status(400).send({
-//       message: err.message,
-//     });
-//   }
-// });
