@@ -37,3 +37,52 @@ expiresIn: Authenticator.EXPIRES_IN,
 
 };
 }
+
+### Exercício 4
+
+app.post("/singup", async (req: Request, res: Response) => {
+try {
+const userData = {
+email: req.body.email,
+password: req.body.password,
+};
+if (!req.body.email || req.body.email.indexOf("@") === -1) {
+throw new Error("Email inválido");
+}
+if (!req.body.password.length || req.body.password.length < 6) {
+throw new Error("Senha com menos de 6 caracteres");
+}
+const idGeneration = new GenerationID();
+const newId = idGeneration.generation();
+const create = new UserDataBase();
+create.createNewUser(newId, userData.email, userData.password);
+const authenticator = new Authenticator();
+const token = authenticator.generateToken(newId);
+res.status(200).send({
+token: token,
+});
+} catch (error) {
+res.status(400).send({ message: error.message });
+}
+});
+
+### Exercício 5
+
+Letra A: public async getUserByEmail(email: string): Promise<any> {
+const response = await this.connection()
+.select("\*")
+.from(UserDataBase.TABLE_NAME)
+.where({ email });
+return response[0];
+
+Letra B:
+const user = new UserDataBase();
+const test = async () => {
+const response = await user.getUserByEmail("felipdddde@gmail.com");
+return console.log(response);
+};
+test();
+
+### Exercício 7
+
+Letra A: O as any significa que você irá receber alguma coisa, se não usa-la ocorre um erro porque o código julga que a informação pode ser undefined
