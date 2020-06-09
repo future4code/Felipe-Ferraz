@@ -1,0 +1,50 @@
+a. Há alguma coisa que você não entendeu nesse código? 
+Se tiver, converse com colegas ou crie um atendimento para esclarecimentos.
+
+    R: O código está um pouco diferente do que estou acostumando, entretanto é possível sua compreenção.
+
+b. Qual o retorno da função se ela receber um objeto vazio de entrada?
+
+    R: Vai retornar um erro com a mensagem "Missing input"
+
+
+c. Qual o retorno da função se ela receber este objeto como entrada:
+
+    R: ({ message: "Missing input" })
+
+d. Qual o retorno da função se ela receber este objeto como entrada:
+
+    R: ({ message: "Missing email" })
+
+
+e. Qual o retorno da função se ela receber este objeto como entrada:
+
+    R: { message: "Invalid password" })
+
+
+f. Qual o retorno da função se ela receber este objeto como entrada:
+
+    R: ({message: "User is correct"})
+
+g. Onde devemos alterar para que a função retorne o status `422` caso o email seja inválido?
+
+    R:   if (!user.email) {
+    return {
+      statusCode: 422, <<< Alteração feita aqui
+      body: JSON.stringify({ message: "Missing email" })
+    };
+  }
+
+
+h. Qual deve ser o objeto de entrada para que a função retorne o status 200?
+
+    R:  {
+        "user": {
+		    "info": {
+			    "name": "Astrodev",
+			    "email": "astrodev@f4.com.br",
+			    "password": "123456"
+	    	    }
+            }
+        }
+        
