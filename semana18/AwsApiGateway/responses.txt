@@ -1,0 +1,18 @@
+1. Sem rodar esse código, dê três exemplos de entrada e saída da função `verifyExistence`
+
+    R: A saída dessa função é um boleano. Se o valor existir, retorna true. Se não retorna false
+
+2. Por que precisamos utilizar o comando `JSON.parse(event.body)`?
+
+    R: Para converter o body de string para objeto
+
+3. Explique em que situação essa lambda retorna um código de `200` e qual o valor do `body` nesse caso
+
+    R: Ela retorna 200 quando o body ou o queryParam existem, e como resposta
+    retorna true para o que possui valor e false para o que não possui.
+
+4. Explique em que situação essa lambda retorna um código de erro `400` com a mensagem `Missing Input`
+
+    R: Ela retorna 400 quando o body e o queryParan são null ou undefined
+
+5. Suba essa função na lambda que você criou anteriormente e faça os testes necessários.
